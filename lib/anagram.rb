@@ -9,10 +9,8 @@ class Anagram
   end
   
   def match(array)
-    array.map do |anagrams|
-      if anagrams.split("").sort == @word.split("").sort 
-        @@all << anagrams unless anagrams.nil?
-      end
+    array.select do |anagrams|
+      anagrams.split("").sort == @word.split("").sort
     end
   end
   
